@@ -21,9 +21,13 @@ console.log('it works');
 
     let myMenu = prompt("Welcome to my onja journal \n Choose (1) for listing all the entries \n Choose (2) for adding a new entry\n Choose (3) to quit");
     alert(`${myMenu}`);
+    
 
 //  Indicate the list of the entries
-
-if(myMenu === 1) {
-    
-}
+    for(let i = 0; i < myEntry.length; i++) {
+        if (myMenu === "1") {
+            alert(``)
+        }
+    }
+     
+     
