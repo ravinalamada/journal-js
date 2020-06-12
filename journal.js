@@ -26,9 +26,14 @@ console.log('it works');
 //  Indicate the list of the entries
     for(let i = 0; i < myEntry.length; i++) {
         if (myMenu === "1") {
-            alert(myEntry[0].title),
-            alert(myEntry[0].content);
+            alert('Title:' +' '+ myEntry[i].title + '\n'+ 'Content:' + ' ' + myEntry[i].content);
         }
+        else if(myMenu === "2") {
+            let user = prompt("Choose (2) for adding a new entry")
+            if(user === "") {
+                
+            }
+        };
     }
      
      
