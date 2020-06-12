@@ -26,7 +26,8 @@ console.log('it works');
 //  Indicate the list of the entries
     for(let i = 0; i < myEntry.length; i++) {
         if (myMenu === "1") {
-            alert(``)
+            alert(myEntry[0].title),
+            alert(myEntry[0].content);
         }
     }
      
