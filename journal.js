@@ -18,22 +18,22 @@ console.log('it works');
 ];
 
 // Let's generate a prompt that will indicate the menu
+    let continueJournal= ""; 
+    while(continueJournal === ""){
+        let myMenu = prompt("Welcome to my onja journal \n Choose (1) for listing all the entries \n Choose (2) for adding a new entry\n Choose (3) to quit");
+        alert(`${myMenu}`);
+        
 
-    let myMenu = prompt("Welcome to my onja journal \n Choose (1) for listing all the entries \n Choose (2) for adding a new entry\n Choose (3) to quit");
-    alert(`${myMenu}`);
-    
-
-//  Indicate the list of the entries
-    for(let i = 0; i < myEntry.length; i++) {
-        if (myMenu === "1") {
-            alert('Title:' +' '+ myEntry[i].title + '\n'+ 'Content:' + ' ' + myEntry[i].content);
-        }
-        else if(myMenu === "2") {
-            let user = prompt("Choose (2) for adding a new entry")
-            if(user === "") {
-                
-            }
+    //  Indicate the list of the entries
+        for(let i = 0; i < myEntry.length; i++) {
+            if (myMenu === "1") {
+                alert('Title:' +' '+ myEntry[i].title + '\n'+ 'Content:' + ' ' + myEntry[i].content);
+            }else if(myMenu === "2") {
+                myMenu = prompt("Enter your journal title"),
+                         prompt("Enter your journal content");                    
+            }else {
+                alert("thank you") 
+            };
         };
-    }
-     
+    }    
      
