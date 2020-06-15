@@ -2,7 +2,7 @@ console.log('it works');
 
 // Creat an Entry object inside an array to restore the elements
 
- myEntry = [
+ let myJournal = [
     {
         title:"First blog letter",
         content:"Coding is the best thing I have ever done so far, I love it because it makes my brain work hard which I think is good for us " 
@@ -18,22 +18,39 @@ console.log('it works');
 ];
 
 // Let's generate a prompt that will indicate the menu
-    let continueJournal= ""; 
-    while(continueJournal === ""){
-        let myMenu = prompt("Welcome to my onja journal \n Choose (1) for listing all the entries \n Choose (2) for adding a new entry\n Choose (3) to quit");
-        alert(`${myMenu}`);
+    let myMenu = prompt("Welcome to my onja journal \n Choose (1) for listing all the entries \n Choose (2) for adding a new entry\n Choose (3) to quit \n Choose (4) to delete the last entry \n Choose (5) delete a specific entry");
+    alert(`${myMenu}`);
         
+// Indicate the list of the entries
+    if (myMenu === "1") {
+        for(let i = 0; i < myJournal.length; i++) {
+            alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
+        };   
+// Generated the code that repeat the new journal title and content which are added            
 
-    //  Indicate the list of the entries
-        for(let i = 0; i < myEntry.length; i++) {
-            if (myMenu === "1") {
-                alert('Title:' +' '+ myEntry[i].title + '\n'+ 'Content:' + ' ' + myEntry[i].content);
-            }else if(myMenu === "2") {
-                myMenu = prompt("Enter your journal title"),
-                         prompt("Enter your journal content");                    
-            }else {
-                alert("thank you") 
-            };
-        };
-    }    
+    }else if (myMenu === '2') {
+        let newEntryTitle = prompt('Enter your journal title');
+        let newEntryContent = prompt('Enter your journal content');
+        let newJournalEntry = {
+                                title: newEntryTitle,
+                                content: newEntryContent
+                               };
+        myJournal.push(newJournalEntry);
+        for(let i = 0; i < myJournal.length; i++) {
+            alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
+        }
+// Generated a code that quit the journal program
+
+    }else if(myMenu === "3") {
+            alert("Thank you for reading")
+    }else if(myMenu === "4") {
+        myJournal.pop();
+        alert(myJournal);
+    }else if (myMenu === "5") {
+        let deleteSpecEntry = prompt("Which index do you want to delete: (myJournal[i])");
+        deleteSpecEntry = myJournal.indexOf(myJournal.length-1);
+        if (deleteSpecEntry === myJournal.length-1) {
+          myJournal.splice(index, 1);
+        };  
+   }
      
