@@ -42,15 +42,21 @@ console.log('it works');
 // Generated a code that quit the journal program
 
     }else if(myMenu === "3") {
-            alert("Thank you for reading")
+            alert("Thank you for reading");
+
+// Generated a code that delete the last element in Array            
     }else if(myMenu === "4") {
         myJournal.pop();
-        alert(myJournal);
+        for(let i = 0; i < myJournal.length; i++) {
+            alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
+        };
+// Generated the code that delete a specific element in Array        
     }else if (myMenu === "5") {
-        let deleteSpecEntry = prompt("Which index do you want to delete: (myJournal[i])");
-        deleteSpecEntry = myJournal.indexOf(myJournal.length-1);
-        if (deleteSpecEntry === myJournal.length-1) {
-          myJournal.splice(index, 1);
-        };  
-   }
+        let indexEntry = prompt("Which index do you want to delete: (1)");
+        myJournal.splice(indexEntry, 1);
+        for(let i = 0; i < myJournal.length; i++) {
+            alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
+        };
+    };  
+   
      
