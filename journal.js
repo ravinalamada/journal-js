@@ -18,45 +18,48 @@ console.log('it works');
 ];
 
 // Let's generate a prompt that will indicate the menu
-    let myMenu = prompt("Welcome to my onja journal \n Choose (1) for listing all the entries \n Choose (2) for adding a new entry\n Choose (3) to quit \n Choose (4) to delete the last entry \n Choose (5) delete a specific entry");
+    let myMenu = Number(prompt("Welcome to my onja journal \n Choose (1) for listing all the entries \n Choose (2) for adding a new entry\n Choose (3) to quit \n Choose (4) to delete the last entry \n Choose (5) delete a specific entry"));
     alert(`${myMenu}`);
         
 // Indicate the list of the entries
-    if (myMenu === "1") {
-        for(let i = 0; i < myJournal.length; i++) {
-            alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
-        };   
+    while(myMenu !== 3) {
+        if (myMenu === 1) {
+            for(let i = 0; i < myJournal.length; i++) {
+                alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
+            };   
 // Generated the code that repeat the new journal title and content which are added            
 
-    }else if (myMenu === '2') {
-        let newEntryTitle = prompt('Enter your journal title');
-        let newEntryContent = prompt('Enter your journal content');
-        let newJournalEntry = {
-                                title: newEntryTitle,
-                                content: newEntryContent
-                               };
-        myJournal.push(newJournalEntry);
-        for(let i = 0; i < myJournal.length; i++) {
-            alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
-        }
+        }else if (myMenu === 2) {
+            let newEntryTitle = prompt('Enter your journal title');
+            let newEntryContent = prompt('Enter your journal content');
+            let newJournalEntry = {
+                                    title: newEntryTitle,
+                                    content: newEntryContent
+                                };
+            myJournal.push(newJournalEntry);
+            for(let i = 0; i < myJournal.length; i++) {
+                alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
+            }
 // Generated a code that quit the journal program
 
-    }else if(myMenu === "3") {
-            alert("Thank you for reading");
+        }else if(myMenu === 3) {
+                alert("Thank you for reading");
 
 // Generated a code that delete the last element in Array            
-    }else if(myMenu === "4") {
-        myJournal.pop();
-        for(let i = 0; i < myJournal.length; i++) {
-            alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
-        };
+        }    
+        else if(myMenu === "4") {
+            myJournal.pop();
+            for(let i = 0; i < myJournal.length; i++) {
+                alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
+            };
 // Generated the code that delete a specific element in Array        
-    }else if (myMenu === "5") {
-        let indexEntry = prompt("Which index do you want to delete: (1)");
-        myJournal.splice(indexEntry, 1);
-        for(let i = 0; i < myJournal.length; i++) {
-            alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
-        };
-    };  
-   
-     
+        }else if (myMenu === "5") {
+            let indexEntry = prompt("Which index do you want to delete: (1)");
+            myJournal.splice(indexEntry, 1);
+            for(let i = 0; i < myJournal.length; i++) {
+                alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
+            };
+        }; 
+        myMenu = prompt("Welcome to my onja journal \n Choose (1) for listing all the entries \n Choose (2) for adding a new entry\n Choose (3) to quit \n Choose (4) to delete the last entry \n Choose (5) delete a specific entry");
+    }
+    alert("Good bye");
