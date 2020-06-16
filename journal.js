@@ -41,13 +41,7 @@ console.log('it works');
                 alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
             }
 // Generated a code that quit the journal program
-
-        }else if(myMenu === 3) {
-                alert("Thank you for reading");
-
-// Generated a code that delete the last element in Array            
-        }    
-        else if(myMenu === "4") {
+        }else if(myMenu === "4") {
             myJournal.pop();
             for(let i = 0; i < myJournal.length; i++) {
                 alert('Title:' +' '+ myJournal[i].title + '\n'+ 'Content:' + ' ' + myJournal[i].content);
